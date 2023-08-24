@@ -4,7 +4,6 @@ exports.addContact=async(req,res)=>{
     try {
 
         const found = await Contact.findOne({email : req.body.email})
-        console.log(found)
         if(found){
             return res.status(400).send('Contact already exists')
         }
